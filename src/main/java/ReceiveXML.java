@@ -17,7 +17,7 @@ public class ReceiveXML {
             Channel channel = connection.createChannel();
             channel.queueDeclare(queueName, true, false, false, null);
             channel.basicQos(1);
-            System.out.println("Обработчик готов");
+            System.out.println("Обработчик включен, отправьте сообщение");
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
                 new SerialXML().deSerial(message);

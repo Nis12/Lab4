@@ -15,7 +15,6 @@ class SerialJson {
 
     String serial(String firstName, String lastName, String group, String progLang) throws IOException {
         Person person = new Person(firstName, lastName, group, progLang);
-
         return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(person);
     }
 
